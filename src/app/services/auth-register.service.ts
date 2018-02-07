@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
 
+
 import { appConfig } from '../app.config';
 import { User } from '../models/user';
 
@@ -15,7 +16,9 @@ export class AuthRegisterService {
 
   create(user: User) {
     console.log(user);
-    return this.http.post(appConfig.apiUrl + '/api/signup', user);
+    return this.http.post(appConfig.apiUrl + '/api/signup', user );
+
+
   }
 
 
