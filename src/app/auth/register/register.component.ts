@@ -1,4 +1,4 @@
-importregistrationnt, OnInit } from '@angular/core';
+import  {Component, OnInit } from '@angular/core';
 import {AuthRegisterService, AlertService} from '../../services/auth-register.service';
 import {Router} from '@angular/router';
 
