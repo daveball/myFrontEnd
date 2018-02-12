@@ -1,6 +1,7 @@
 import  {Component, OnInit } from '@angular/core';
 import {AuthRegisterService, AlertService} from '../../services/auth-register.service';
 import {Router} from '@angular/router';
+import {registrationStatus} from '../../models/registationStatus';
 
 @Component({
   selector: 'app-register',
@@ -21,22 +22,17 @@ export class RegisterComponent implements OnInit {
     this.loading = true;
     this.registerService.create(this.model)
       .subscribe(
-        data => {  console.log(data.success);
-                    //let success = JSON.parse(data.toString(),replacer());
-                    // var success= datajson.fromJson(success);
-          for (let i of data){
+        data => {
 
-            console.log('url is ' + i.success);
-          let success = i.success;
-            console.log(success);
-          }
-                if(data.success) {
+                const returnedMessage = <registrationStatus> data;
+
+                if (returnedMessage.success) {
 
 
                   this.alertService.success('Registration successful', true);
                   this.router.navigate(['/login']);
-                } else{
-                      this.alertService.error(data.msg);
+                } else {
+                      this.alertService.error(returnedMessage.msg);
                 }
 
 
@@ -48,12 +44,6 @@ export class RegisterComponent implements OnInit {
         })    ;
   }
 
-  function replacer(key, value) {
-    console.log(typeof value);
-    if (key === 'success') {
-      return value;
-    }
-    return value;
-  }
+
 
 }
