@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthLoginService} from '../../services/auth-login.service';
-import {AlertService} from '../../services/auth-register.service';
+import {AlertService} from '../../services/alert.service';
 
 @Component({
   moduleId: module.id,
@@ -34,6 +34,8 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.model.email, this.model.password)
       .subscribe(
         data => {
+          console.log(data);
+          // noinspection JSIgnoredPromiseFromCall
           this.router.navigate([this.returnUrl]);
         },
         error => {
@@ -41,6 +43,7 @@ export class LoginComponent implements OnInit {
           this.loading = false;
         });
   }
+
 }
 
 

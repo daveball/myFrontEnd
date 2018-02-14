@@ -7,6 +7,7 @@ describe('AlertComponent', () => {
   let fixture: ComponentFixture<AlertComponent>;
 
   beforeEach(async(() => {
+    // noinspection JSIgnoredPromiseFromCall
     TestBed.configureTestingModule({
       declarations: [ AlertComponent ]
     })

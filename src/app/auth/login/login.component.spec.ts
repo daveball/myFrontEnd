@@ -7,6 +7,7 @@ describe('LoginComponent', () => {
   let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(async(() => {
+    // noinspection JSIgnoredPromiseFromCall
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ]
     })
