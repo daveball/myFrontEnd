@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header> <h1>Create Review </h1></mat-card-header>
+     <ngForm>
+      <mat-form-field>
+        <input matInput placeholder="Title">
+      </mat-form-field>
+
+      <mat-form-field>
+      <input matInput placeholder="Director">
+      </mat-form-field>
+          <mat-form-field>
+        <input matInput placeholder="Studio">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose Release date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+       <mat-form-field>
+         <input matInput placeholder="Image URL">
+       </mat-form-field>
+
+      <app-ngx-editor [placeholder]="'Enter text here...'"
+                      [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+
+     </ngForm>
+</mat-card>
