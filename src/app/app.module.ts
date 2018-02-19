@@ -9,6 +9,8 @@ import { LoginComponent } from './auth/login/login.component';
 import {AuthLoginService} from './services/auth-login.service';
 import { AuthRegisterService} from './services/auth-register.service';
 import {AlertService} from './services/alert.service';
+
+import {ReviewService} from './services/review.service';
 // import routing and AuthGuard
 import { AppRouting } from './app.routing';
 import {AuthGuard} from './guards/auth.guard';
@@ -49,6 +51,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 // imports for Ngx editor to work
 import {NgxEditorModule} from 'ngx-editor';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import { ViewReviewsComponent } from './view-reviews/view-reviews.component';
+
+
+
 
 declare var System;
 if (!window['Zone']) {
@@ -73,6 +79,7 @@ if (!window['Zone']) {
     ContactUsComponent,
     WhereWeAreComponent,
     AdminDashboardComponent,
+    ViewReviewsComponent,
 
   ],
   imports: [
@@ -112,6 +119,7 @@ if (!window['Zone']) {
               AuthLoginService,
               AuthGuard,
               AlertService,
+              ReviewService,
               JwtInterceptorProvider,
               ErrorInterceptorProvider
 
