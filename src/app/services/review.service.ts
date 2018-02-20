@@ -16,7 +16,7 @@ export class ReviewService {
   create(review: Review) {
     console.log(review);
 
-    return this.http.post(appConfig.apiUrl + '/api/film'+ review);
+    return this.http.post(appConfig.apiUrl + '/api/film', review);
   }
 
   getAllReviews(): Observable<Array<Review>> {

@@ -14,7 +14,7 @@ import {AuthLoginService} from '../services/auth-login.service';
 export class ViewReviewsComponent implements OnInit {
   allReviews: Array<Review>;
   currentUser: User;
-  constructor(private reviewService: ReviewService, private authService: AuthLoginService) {
+  constructor(private reviewService: ReviewService, private authService: AuthLoginService, private router: Router) {
 
   }
 
