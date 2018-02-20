@@ -16,7 +16,6 @@ import { AppRouting } from './app.routing';
 import {AuthGuard} from './guards/auth.guard';
 import { HttpClientModule} from '@angular/common/http';
 
-
 // import our  helpers
 import {ErrorInterceptorProvider} from './services/helper/error.interceptor';
 import {JwtInterceptorProvider} from './services/helper/jwt.interceptor';
@@ -24,12 +23,12 @@ import {JwtInterceptorProvider} from './services/helper/jwt.interceptor';
 // imports  material
 
 import {
-  MatMenuModule, MatCommonModule, MatButtonModule, MatCardModule,
-  MatToolbarModule, MatIconModule, MatFormFieldModule,
-  MatDatepickerModule, MatInputModule, MatSidenavModule, MatAutocompleteModule,
-  MatCheckboxModule, MatGridListModule, MatDialogModule,
-  MatLineModule, MatChipsModule, MatExpansionModule,
-  MatProgressBarModule, MatRadioModule, MatNativeDateModule
+  MatAutocompleteModule, MatButtonModule, MatCardModule, MatCheckboxModule,
+  MatChipsModule, MatCommonModule, MatDatepickerModule,
+  MatDialogModule, MatExpansionModule, MatFormFieldModule, MatGridListModule,
+  MatIconModule, MatInputModule, MatLineModule,
+  MatMenuModule, MatNativeDateModule, MatProgressBarModule,
+  MatRadioModule, MatSidenavModule, MatToolbarModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -52,9 +51,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import {NgxEditorModule} from 'ngx-editor';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { ViewReviewsComponent } from './view-reviews/view-reviews.component';
-
-
-
+import { FilmDetailsComponent } from './film-details/film-details.component';
 
 declare var System;
 if (!window['Zone']) {
@@ -80,6 +77,7 @@ if (!window['Zone']) {
     WhereWeAreComponent,
     AdminDashboardComponent,
     ViewReviewsComponent,
+    FilmDetailsComponent
 
   ],
   imports: [
@@ -109,8 +107,7 @@ if (!window['Zone']) {
     MatNativeDateModule,
     BrowserAnimationsModule,
     NgxEditorModule,
-    AngularFontAwesomeModule,
-
+    AngularFontAwesomeModule
 
   ],
 
@@ -127,8 +124,3 @@ if (!window['Zone']) {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-
-
-

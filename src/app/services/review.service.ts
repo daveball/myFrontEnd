@@ -8,23 +8,27 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class ReviewService {
   headers: HttpHeaders;
-  constructor(private http: HttpClient ) {
+
+  constructor(private http: HttpClient) {
 
   }
-
 
   create(review: Review) {
     console.log(review);
-    return this.http.post(appConfig.apiUrl + '/api/film', review);
+
+    return this.http.post(appConfig.apiUrl + '/api/film'+ review);
   }
 
-  getAllReviews() {
+  getAllReviews(): Observable<Array<Review>> {
     try {
 
-      return this.http.get(appConfig.apiUrl + '/api/film');
+      return this.http.get(`${appConfig.apiUrl}/api/film`).map(res => res as Array<Review> || []) ;
     } catch (error) {
       console.log(error.msg);
     }
+  }
 
+  delete(id: string) {
+    return this.http.delete(`${appConfig.apiUrl}/api/film` + id);
   }
 }

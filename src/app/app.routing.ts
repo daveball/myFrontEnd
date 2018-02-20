@@ -1,6 +1,6 @@
 
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -17,12 +17,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { WhereWeAreComponent } from './where-we-are/where-we-are.component';
 import {AdminDashboardComponent} from './admin-dashboard/admin-dashboard.component';
 
-
-
-
-
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent ,
+  { path: '', component: HomeComponent
 
   },
   {
@@ -63,9 +59,10 @@ const appRoutes: Routes = [
   },
   {path: 'admindashboard',  component: AdminDashboardComponent, data : {title : 'Where to find us'}
 
+  },
+  {path: 'film-details/: id',  component: AdminDashboardComponent, data : {title : 'Where to find us'}
+
   }
   ];
-
-
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);

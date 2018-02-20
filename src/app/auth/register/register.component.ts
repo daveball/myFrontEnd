@@ -18,26 +18,22 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-
   register() {
     this.loading = true;
     this.registerService.create(this.model)
       .subscribe(
-        data => {  const returnedMessage = <ValidationMessage> data;
+        data => {  const returnedMessage = data as ValidationMessage;
 
-                if (returnedMessage.success) {
+                   if (returnedMessage.success) {
 
                    console.log('Registration worked');
-                  this.alertService.success('Registration successful', true);
+                   this.alertService.success('Registration successful', true);
                   // noinspection JSIgnoredPromiseFromCall
-                  this.router.navigate(['/login']);
+                   this.router.navigate(['/login']);
                 } else {
                   console.log('Error from registration : ' + returnedMessage.msg);
                   this.alertService.error(returnedMessage.msg);
                 }
-
-
-
 
         },
         error => {
@@ -45,6 +41,5 @@ export class RegisterComponent implements OnInit {
           this.loading = false;
         })    ;
   }
-
 
 }

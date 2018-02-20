@@ -11,7 +11,7 @@ import {User} from '../models/user';
 @Injectable()
 export class AuthLoginService {
   public token: string;
-  private emptyUser = new User('', '', '');
+  private emptyUser = new User();
   private LoggedIn = new   BehaviorSubject<boolean> (false);
   currentLoggedIn = this.LoggedIn.asObservable();
   private currentUser = new BehaviorSubject<User>(this.emptyUser);
